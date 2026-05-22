@@ -7,6 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 const activityRoutes = require("./routes/activityRoutes");
 const authenticateToken = require("./middleware/authMiddleware");
 const areaRoutes = require("./routes/areaRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/activities', activityRoutes);
 app.use("/api/areas", areaRoutes);
+app.use("/api/users", userRoutes);
 
 app.get('/', (_req, res) => {
     res.send('Socio-connect running');
